@@ -84,7 +84,7 @@ Fichiers en détailles
 -----------------------------------------------------------------------------------------
 Main.java 
 = point d'entrée sur lequel on lance toujours la compilation et le lancement du script.
-/*
+
 Explication de la logique et de la complexité :
 
 Dans ce fichier Main.java, j'utilise une approche très simple pour démarrer mon programme.
@@ -102,15 +102,13 @@ classes, notamment dans la classe Menu qui va gérer les différentes options et
 Cette approche me permet d'avoir un point d'entrée clair et simple pour mon application, tout en
 séparant la logique du menu principal dans une autre classe. C'est une bonne pratique de
 programmation car cela rend mon code plus organisé et plus facile à maintenir.
-*/
+
 -------------------------------------------------------------------
 Fichiers de mon package minijeux
 ---------------------------------
 Mon Menu (principal) appelé dans mon Main.java
-
 Menu.java
 
-/*
 Explication de la logique et de la complexité :
 
 Dans ce fichier Menu.java, j'utilise une boucle do-while pour afficher continuellement le menu
@@ -135,13 +133,11 @@ de manière élégante, en affichant un message d'erreur et en continuant l'exé
 Cette structure de menu est flexible et facilement extensible. Si je veux ajouter de nouvelles
 options, je peux simplement ajouter de nouveaux cas au switch et de nouvelles lignes dans
 l'affichage du menu.
-*/
 
 -----------------------------------------------------
 Fonctionnalité 1 = Calcul de remise
 CalculRemise.java
 
-/*
 Explication de la logique et de la complexité :
 
 Dans ce fichier CalculRemise.java, j'ai créé une classe simple pour calculer le prix d'un article
@@ -168,13 +164,11 @@ de gérer les décimales en Java.
 Cette classe est un bon exemple de programmation orientée objet simple, avec des variables
 d'instance et une méthode qui effectue un calcul spécifique. Elle pourrait facilement être
 étendue pour inclure plus de fonctionnalités liées aux calculs de prix et de remises.
-*/
 
 -------------------------------------------------------
 Fonctionnalité 2 = Lancé de dés
 LanceDeDes.java
 
-/*
 Explication de la logique et de la complexité :
 
 Dans ce fichier LanceDeDes.java, j'ai créé une classe qui simule le lancer de dés. Voici la logique principale :
@@ -202,11 +196,12 @@ Cette classe est un bon exemple de comment on peut utiliser la programmation ori
 modéliser un processus du monde réel (lancer de dés) en code Java. Elle pourrait facilement être
 étendue pour inclure plus de fonctionnalités, comme des statistiques sur les lancers ou différents
 types de dés.
-*/
+
 
 ------------------------------------------------
 Fonctionnalité 3 = Le juste prix
-/*
+JstePrix.java
+
 Explication de la logique et de la complexité :
 
 Dans ce fichier JustePrix.java, j'ai créé une classe qui simule le jeu du Juste Prix. Voici la logique principale :
@@ -229,11 +224,11 @@ La structure do-while est parfaite pour ce jeu car je veux toujours exécuter le
 
 Cette classe est un bon exemple de jeu simple en Java. Elle pourrait facilement être étendue pour inclure plus de
 fonctionnalités, comme un nombre limité de tentatives, des niveaux de difficulté, ou des statistiques sur les parties jouées.
-*/
 
 ---------------------------------------------------------
 Fonctionnalité 4 =  Horloge Numérique
-/*
+HorlogeNumerique.java
+
 Explication de la logique et de la complexité :
 
 Dans ce fichier HorlogeNumerique.java, j'ai créé une classe qui simule une horloge numérique. Voici la logique principale :
@@ -255,13 +250,12 @@ une dérive de l'horloge sur de longues périodes. Pour une horloge plus précis
 Cette classe est un bon exemple d'utilisation des fonctionnalités de date et d'heure de Java, ainsi que de
 la gestion basique des threads. Elle pourrait être étendue pour inclure plus de fonctionnalités, comme
 différents formats d'affichage, des alarmes, ou une meilleure gestion des interruptions.
-*/
 
 
 -----------------------------------------
-Fonctionnalité 5 = Jeu du pendu
+Fonctionnalité 5 = Jeu du pendu => trouver mot....
+JeuDuPendu.java
 
-/*
 Explication de la logique et de la complexité :
 
 Dans ce fichier JeuDuPendu.java, j'ai créé une classe qui simule le jeu du pendu. Voici la logique principale :
@@ -288,12 +282,12 @@ Cette implémentation du jeu du pendu est simple mais fonctionnelle. Elle pourra
 - Un affichage graphique du pendu.
 - Une gestion des lettres déjà proposées.
 - Des niveaux de difficulté basés sur la longueur ou la rareté des mots.
-*/
+
 
 ------------------------------------------
 Fonctionnalité 6 = Décodeur de César
+DecodeurCesar.java
 
-/*
 Explication de la logique et de la complexité :
 
 Dans ce fichier DecodeurCesar.java, j'ai créé une classe qui implémente le chiffrement et le déchiffrement de César. Voici la logique principale :
@@ -316,15 +310,12 @@ Cette implémentation du chiffre de César est simple mais fonctionnelle. Elle p
 - La gestion des minuscules
 - La possibilité de chiffrer/déchiffrer des fichiers entiers
 - Une interface graphique pour une meilleure expérience utilisateur
-*/
 
 
 ------------------------------------------
 Fonctionnalité 7 = Gestionnaire de contact et son menu
-
 MenuContact.java
 
-/*
 Explication de la logique et de la complexité :
 
 Dans ce fichier MenuContact.java, j'ai créé une classe qui gère l'interface utilisateur pour le gestionnaire de contacts. Voici la logique principale :
@@ -344,11 +335,9 @@ J'utilise plusieurs concepts de programmation Java :
 - Utilisation d'objets : je crée et manipule des instances de GestionnaireContacts et Contact.
 
 Cette classe MenuContact agit comme une interface entre l'utilisateur et le GestionnaireContacts, suivant le principe de séparation des responsabilités. Elle pourrait être améliorée en ajoutant plus de fonctionnalités, comme la recherche de contacts ou l'exportation/importation de la liste de contacts.
-*/
 
 GestionnaireContacts.java
 
-/*
 Explication de la logique et de la complexité :
 
 Dans ce fichier GestionnaireContacts.java, j'ai créé deux classes : GestionnaireContacts et Contact.
@@ -370,4 +359,7 @@ Cette classe représente un contact individuel avec nom, prénom et email.
 La complexité des opérations sur un Contact individuel est O(1) car elles impliquent simplement l'accès ou la modification d'attributs.
 
 Cette structure de classes suit le principe de responsabilité unique : GestionnaireContacts gère la collection de contacts, tandis que Contact représente les données d'un seul contact. Cela rend le code plus modulaire et plus facile à maintenir.
-*/
+
+/////////////////////////////////////////////////////////
+
+Voilà!!!!!!
