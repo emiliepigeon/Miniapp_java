@@ -30,7 +30,7 @@ Miniapp_java/
     ├── Calculatrice.java  # Contient la logique de la calculatrice.
     └── [autres fichiers]  # Placez ici les autres classes comme MenuContact, etc.
 
-Si problème de cache penser à jetter les fichiers de compilation en bytecode (non.class) ... Cela peut résoudre certain problème dec on affichage de modifications...
+Si problème de cache penser à jetter les fichiers de compilation en bytecode (non.class) ... Cela peut résoudre certain problèmes (exemple: après compilation et lecture du script aucune erreurs en console mais aucune modification visible) ...
 
 ///////////////////////////////////////////////////////////////////////////////
 MiniApp : Une Collection de Mini-Jeux et Utilitaires Java
