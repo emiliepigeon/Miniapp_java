@@ -9,7 +9,7 @@ public class JustePrix {
     private int finInterval;    // Fin de l'intervalle pour le prix à deviner
     private int prixATrouver;   // Le prix que le joueur doit deviner
 
-    // Je crée un constructeur avec des paramètres par défaut
+    // Je crée un constructeur avec des paramètres pour personnaliser l'intervalle
     public JustePrix(int _debutInterval, int _finInterval) {
         // J'initialise mes variables avec les valeurs passées en paramètres
         this.debutInterval = _debutInterval;
@@ -53,3 +53,4 @@ public class JustePrix {
         // Je ne ferme pas le scanner ici car il pourrait être utilisé ailleurs dans le programme
     }
 }
+

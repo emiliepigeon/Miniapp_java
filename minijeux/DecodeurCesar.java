@@ -1,16 +1,18 @@
+// Je déclare que cette classe fait partie du package minijeux
 package minijeux;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+// J'importe les classes nécessaires pour mon décodeur César
+import java.util.Arrays;  // Pour créer facilement une liste à partir d'un tableau
+import java.util.List;    // Pour utiliser l'interface List
+import java.util.Scanner; // Pour lire les entrées de l'utilisateur
 
 public class DecodeurCesar {
     // Je déclare mes variables d'instance
     private List<String> alphabet = Arrays.asList("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
-    private String operation;
-    private String message;
-    private int cleDeChiffrement;
-    private StringBuilder resultatMessage;
+    private String operation;         // Pour stocker le type d'opération (chiffrer ou déchiffrer)
+    private String message;           // Pour stocker le message à traiter
+    private int cleDeChiffrement;     // Pour stocker la clé de chiffrement
+    private StringBuilder resultatMessage;  // Pour construire le message résultant
 
     // Constructeur
     public DecodeurCesar() {
@@ -87,3 +89,5 @@ public class DecodeurCesar {
         this.resultatMessage.setLength(0);
     }
 }
+
+

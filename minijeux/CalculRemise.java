@@ -44,3 +44,4 @@ public class CalculRemise {
         // Je ne ferme pas le scanner ici car il pourrait être utilisé ailleurs dans le programme
     }
 }
+

@@ -1,9 +1,11 @@
-// Classe principale qui lance le programme
+// Je suis le fichier principal qui lance mon programme
+// Je n'ai pas besoin de package car je suis à la racine du projet
 
-// NOTE : Cette classe n'a pas besoin d'appartenir à un package car elle agit comme point d'entrée.
 public class Main {
-
+    // La méthode main est le point de départ de mon programme
     public static void main(String[] args) {
-        minijeux.Menu.afficherMenu(); // Appel direct à la méthode afficherMenu de la classe Menu dans le package minijeux
+        // J'appelle la méthode afficherMenu de la classe Menu qui est dans le package minijeux
+        // C'est comme si je disais "Va dans le dossier minijeux, trouve la classe Menu, et lance sa méthode afficherMenu"
+        minijeux.Menu.afficherMenu(); 
     }
 }

@@ -1,69 +1,102 @@
+
+// Je déclare que cette classe fait partie du package minijeux
 package minijeux;
 
-import java.util.Scanner;
+// J'importe la classe ArrayList de java.util pour pouvoir créer une liste dynamique de contacts
+import java.util.ArrayList;
 
-public class Menu {
-    public static void afficherMenu() {
-        Scanner scanner = new Scanner(System.in);
-        int choix;
+// Cette classe gère la liste des contacts
+public class GestionnaireContacts {
+    // Je crée une ArrayList pour stocker les contacts
+    private ArrayList<Contact> contacts = new ArrayList<>();
 
-        do {
-            // J'affiche le menu principal
-            System.out.println("\n=== Menu Principal ===");
-            System.out.println("1. Calculer une remise");
-            System.out.println("2. Lance de dé");
-            System.out.println("3. Jeu du juste prix");
-            System.out.println("4. Horloge numérique");
-            System.out.println("5. Jeu du pendu");
-            System.out.println("6. Décodeur César");
-            System.out.println("7. Gestionnaire de contact");
-            System.out.println("8. Calculatrice simple");
-            System.out.println("0. Quitter");
+    // Le constructeur de la classe
+    public GestionnaireContacts() {
+        // J'ajoute deux contacts prédéfinis à la liste
+        contacts.add(new Contact("Paul", "Personne", "PaulP@gmail.com"));
+        contacts.add(new Contact("Georgette", "Courgette", "coucou@coucou.fr"));
+    }
 
-            System.out.print("\nVotre choix : ");
-            
-            try {
-                choix = Integer.parseInt(scanner.nextLine());
-                
-                switch (choix) {
-                    case 1:
-                        new CalculRemise().calculRemise();
-                        break;
-                    case 2:
-                        new LanceDeDes().lancer();
-                        break;
-                    case 3:
-                        new JustePrix().run();
-                        break;
-                    case 4:
-                        new HorlogeNumerique().run();
-                        break;
-                    case 5:
-                        new JeuDuPendu().run();
-                        break;
-                    case 6:
-                        new DecodeurCesar().run();
-                        break;
-                    case 7:
-                        new MenuContact().run();
-                        break;
-                    case 8:
-                        new Calculatrice().calculer(); // Appel correct de la calculatrice
-                        break;
-                    case 0:
-                        System.out.println("*** Fin du programme ***");
-                        break;
-                    default:
-                        System.out.println("Choix invalide. Veuillez réessayer.");
-                }
-                
-            } catch (NumberFormatException e) {
-                // Gestion des erreurs si l'utilisateur entre autre chose qu'un entier
-                System.out.println("Veuillez entrer un numéro valide.");
-                choix = -1; // Réinitialisation pour éviter de quitter
+    // Cette méthode ajoute un nouveau contact à la liste
+    public void ajouterContact(String nom, String prenom, String email) {
+        contacts.add(new Contact(nom, prenom, email));
+        System.out.println("Contact ajouté avec succès !");
+    }
+
+    // Cette méthode affiche tous les contacts de la liste
+    public void afficherContacts() {
+        if (contacts.isEmpty()) {
+            System.out.println("Aucun contact enregistré.");
+        } else {
+            System.out.println("Liste des contacts :");
+            for (int i = 0; i < contacts.size(); i++) {
+                // J'affiche le numéro du contact (i+1) et ses informations
+                System.out.println((i + 1) + ". " + contacts.get(i));
             }
-        } while (choix != 0);
+        }
+    }
 
-        scanner.close(); // Fermeture du scanner après utilisation
+    // Cette méthode supprime un contact de la liste
+    public void supprimerContact(int index) {
+        if (index >= 0 && index < contacts.size()) {
+            Contact contactSupprime = contacts.remove(index);
+            System.out.println("Contact '" + contactSupprime.getNom() + " " + contactSupprime.getPrenom() + "' supprimé avec succès.");
+        } else {
+            System.out.println("Numéro de contact invalide.");
+        }
+    }
+
+    // Cette méthode modifie un contact existant dans la liste
+    public void modifierContact(int index, String nom, String prenom, String email) {
+        if (index >= 0 && index < contacts.size()) {
+            Contact contact = contacts.get(index);
+            contact.setNom(nom);
+            contact.setPrenom(prenom);
+            contact.setEmail(email);
+            System.out.println("Contact modifié avec succès.");
+        } else {
+            System.out.println("Numéro de contact invalide.");
+        }
+    }
+
+    // Cette méthode vérifie si la liste de contacts est vide
+    public boolean estVide() {
+        return contacts.isEmpty();
+    }
+
+    // Cette méthode retourne un contact spécifique de la liste
+    public Contact getContact(int index) {
+        if (index >= 0 && index < contacts.size()) {
+            return contacts.get(index);
+        }
+        return null;
+    }
+}
+
+// Cette classe représente un contact individuel
+class Contact {
+    private String nom;
+    private String prenom;
+    private String email;
+
+    // Le constructeur de la classe Contact
+    public Contact(String nom, String prenom, String email) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+    }
+
+    // Getters et setters pour accéder et modifier les attributs du contact
+    public String getNom() { return nom; }
+    public void setNom(String nom) { this.nom = nom; }
+    public String getPrenom() { return prenom; }
+    public void setPrenom(String prenom) { this.prenom = prenom; }
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
+
+    // Cette méthode retourne une représentation en chaîne de caractères du contact
+    @Override
+    public String toString() {
+        return nom + " " + prenom + " (" + email + ")";
     }
 }

@@ -1,17 +1,27 @@
+// Je déclare que cette classe fait partie du package minijeux
 package minijeux;
 
+// J'importe la classe ArrayList qui me permet de créer des listes dynamiques
 import java.util.ArrayList;
+
+// J'importe la classe Arrays qui contient des méthodes utiles pour manipuler des tableaux
 import java.util.Arrays;
+
+// J'importe l'interface List qui définit les méthodes communes à toutes les listes
 import java.util.List;
+
+// J'importe la classe Random qui me permet de générer des nombres aléatoires
 import java.util.Random;
+
+// J'importe la classe Scanner qui me permet de lire les entrées de l'utilisateur
 import java.util.Scanner;
 
 public class JeuDuPendu {
     // Je déclare mes variables d'instance
-    private List<String> listeMots;
-    private String motATrouver;
-    private List<Character> listeLettreMot;
-    private List<Character> affichageMotATrouver;
+    private List<String> listeMots;  // Liste des mots possibles à deviner
+    private String motATrouver;      // Le mot que le joueur doit deviner
+    private List<Character> listeLettreMot;     // Liste des lettres du mot à trouver
+    private List<Character> affichageMotATrouver;  // Liste pour l'affichage du mot avec des tirets
 
     // Je crée un constructeur avec une liste de mots par défaut
     public JeuDuPendu() {
@@ -48,6 +58,7 @@ public class JeuDuPendu {
         System.out.println("Lancement du Jeu du pendu ...");
         Scanner scanner = new Scanner(System.in);
 
+        // Je continue le jeu tant qu'il reste des tirets dans l'affichage
         while (this.affichageMotATrouver.contains('-')) {
             // J'affiche le mot à trouver (avec les tirets)
             System.out.println("Mot à trouver : " + String.join("", this.affichageMotATrouver.stream().map(String::valueOf).toArray(String[]::new)));
