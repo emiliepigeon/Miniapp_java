@@ -16,8 +16,7 @@ public class Menu {
             System.out.println("4. Horloge numérique");
             System.out.println("5. Jeu du pendu");
             System.out.println("6. Décodeur César");
-            System.out.println("7. Gestionnaire de contact");
-            System.out.println("8. Calculatrice simple");
+            System.out.println("7. Gestionnaire de contact");            System.out.println("8. Calculatrice simple");
             System.out.println("0. Quitter");
 
             System.out.print("\nVotre choix : ");
